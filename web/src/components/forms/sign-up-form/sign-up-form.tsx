@@ -6,6 +6,7 @@ import { handleFormDataChange, handleSignUp } from "@/utils/auth/web";
 import { useActionState, useState } from "react";
 import { formFields } from "./sign-up.string";
 import type { ValuesType } from "./sign-up.types";
+import { Loader } from "@/components/loader";
 
 export const SignUpForm = (): JSX.Element => {
   const [values, setValues] = useState<ValuesType>({
@@ -34,7 +35,7 @@ export const SignUpForm = (): JSX.Element => {
           ) : null}
         </div>
       ))}
-      <Button type="submit">{isPending ? ". . ." : "Sign Up"}</Button>
+      <Button type="submit">{isPending ? <Loader /> : "Sign Up"}</Button>
     </form>
   );
 };

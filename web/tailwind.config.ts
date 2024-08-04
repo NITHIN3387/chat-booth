@@ -14,6 +14,10 @@ const config: Config = {
         "secondary-bg-color": "rgb(var(--secondary-bg-color))",
         "ternary-bg-color": "rgb(var(--ternary-bg-color))",
       },
+      animation: {
+        "bounce-1": "bounce 1s 0.1s infinite",
+        "bounce-2": "bounce 1s 0.2s infinite",
+      }
     },
   },
   plugins: [],
