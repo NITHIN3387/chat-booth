@@ -15,7 +15,7 @@ export default function Page(): JSX.Element {
           submitButtonLabel="Sign In"
         />
         <p className="brightness-75">
-          Don't have an account ?
+          Don&apos;t have an account ?
           <Link
             className="text-primary-theme-color font-semibold"
             href="/sign-up"
