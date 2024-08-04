@@ -4,17 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { handleFormDataChange, handleSignUp } from "@/utils/auth/web";
 import { useActionState, useState } from "react";
-import { formFields } from "./sign-up.string";
+import { formFields, initValues } from "./sign-up.string";
 import type { ValuesType } from "./sign-up.types";
 import { Loader } from "@/components/loader";
 
 export const SignUpForm = (): JSX.Element => {
-  const [values, setValues] = useState<ValuesType>({
-    name: "",
-    email: "",
-    password: "",
-    confirm: "",
-  });
+  const [values, setValues] = useState<ValuesType>(initValues);
   const [state, formAction, isPending] = useActionState(handleSignUp, null);
 
   return (
@@ -35,6 +30,7 @@ export const SignUpForm = (): JSX.Element => {
           ) : null}
         </div>
       ))}
+
       <Button type="submit">{isPending ? <Loader /> : "Sign Up"}</Button>
     </form>
   );

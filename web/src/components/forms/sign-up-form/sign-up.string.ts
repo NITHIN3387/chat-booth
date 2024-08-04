@@ -1,28 +1,35 @@
-import type { FormFieldsType } from "./sign-up.types";
+import type { FormFieldsType, ValuesType } from "./sign-up.types";
+
+export const initValues: ValuesType = {
+  name: "",
+  email: "",
+  password: "",
+  confirm: "",
+};
 
 export const formFields: FormFieldsType[] = [
   {
     id: "name",
     label: "Name",
     placeholder: "Your Name",
-    type: "text"
+    type: "text",
   },
   {
     id: "email",
     label: "Email",
     placeholder: "name@gmail.com",
-    type: "email"
+    type: "email",
   },
   {
     id: "password",
     label: "Password",
     placeholder: "••••••••",
-    type: "password"
+    type: "password",
   },
   {
     id: "confirm",
     label: "Confirm Password",
     placeholder: "••••••••",
-    type: "password"
+    type: "password",
   },
-]
+];
