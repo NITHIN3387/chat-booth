@@ -2,15 +2,16 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { handleFormDataChange, handleSignUp } from "@/utils/auth/web";
+import { handleFormDataChange } from "@/utils/auth/web";
 import { useActionState, useState } from "react";
-import { formFields, initValues } from "./sign-up.string";
-import type { ValuesType } from "./sign-up.types";
 import { Loader } from "@/components/loader";
+import type { AuthFormProps, ValuesType } from "./auth-form.types";
 
-export const SignUpForm = (): JSX.Element => {
+export const AuthForm = (props: AuthFormProps): JSX.Element => {
+  const { authHandler, formFields, initValues, submitButtonLabel } = props
+
   const [values, setValues] = useState<ValuesType>(initValues);
-  const [state, formAction, isPending] = useActionState(handleSignUp, null);
+  const [state, formAction, isPending] = useActionState(authHandler, null);
 
   return (
     <form action={formAction} className="space-y-6">
@@ -31,7 +32,7 @@ export const SignUpForm = (): JSX.Element => {
         </div>
       ))}
 
-      <Button type="submit">{isPending ? <Loader /> : "Sign Up"}</Button>
+      <Button disabled={isPending} type="submit">{isPending ? <Loader /> : submitButtonLabel}</Button>
     </form>
   );
 };

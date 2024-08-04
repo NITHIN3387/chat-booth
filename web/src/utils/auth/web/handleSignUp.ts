@@ -1,3 +1,5 @@
+"use client"
+
 import { redirect } from "next/navigation";
 
 export const handleSignUp = async (state: any, formData: FormData) => {
@@ -51,5 +53,5 @@ export const handleSignUp = async (state: any, formData: FormData) => {
       status: false,
     };
   else if (responce.status === 500) console.log("Internal server error");
-  else redirect("/sign-in");
+  else redirect("/");
 };

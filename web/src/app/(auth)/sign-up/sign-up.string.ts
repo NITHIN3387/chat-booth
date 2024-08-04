@@ -1,4 +1,4 @@
-import type { FormFieldsType, ValuesType } from "./sign-up.types";
+import type { FormFieldsType, ValuesType } from "@/components/forms/auth-form";
 
 export const initValues: ValuesType = {
   name: "",
