@@ -9,7 +9,7 @@ export function SideNavbar(props: SideNavbarProps): JSX.Element {
   const { className } = props
 
   return (
-    <nav className={cn(["h-dvh w-full bg-secondary-bg-color", className])}>
+    <nav className={cn(["h-dvh w-full bg-secondary-bg-color overflow-y-scroll scroll-", className])}>
       <SideNavBarHeader />
       <RoomList />
     </nav>

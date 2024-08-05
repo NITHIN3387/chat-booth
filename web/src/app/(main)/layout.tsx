@@ -6,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="grid grid-cols-[24rem_1fr]">
+    <div className="grid grid-cols-[24rem_1fr] h-dvh overflow-hidden">
       <SideNavbar className="md:inline hidden" />
       {children}
     </div>

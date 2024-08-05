@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 
 export function SideNavBarHeader(): JSX.Element {
   return (
-    <header className="sticky top-0 space-y-4 p-4">
+    <header className="sticky top-0 space-y-4 p-4 bg-secondary-bg-color">
       <section className="flex justify-between">
         <h1>CHAT APP</h1>
         <DP className="!w-11" name="Nithin N"/>

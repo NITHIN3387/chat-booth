@@ -7,7 +7,7 @@ export function RoomCard(props: RoomCardType): JSX.Element {
 
   return (
     <Link
-      className="flex items-center gap-6 p-4 hover:bg-ternary-bg-color transition-all duration-400"
+      className="flex items-center gap-6 p-4 bg-pr hover:bg-ternary-bg-color transition-all duration-400"
       href={roomLink}
     >
       <DP className="w-11" name={roomName} />

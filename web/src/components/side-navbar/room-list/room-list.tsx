@@ -8,6 +8,14 @@ export function RoomList(): JSX.Element {
     { id: "1234567890", name: "Room 1", createdById: "0987654321" },
     { id: "1234567890", name: "Room 1", createdById: "0987654321" },
     { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
+    { id: "1234567890", name: "Room 1", createdById: "0987654321" },
   ]);
 
   return (

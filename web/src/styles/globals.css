@@ -13,6 +13,19 @@
   --ternary-bg-color: 51 51 51;
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--primary-theme-color));
+  border-radius: 3px;
+}
+
 * {
   padding: 0;
   margin: 0;
