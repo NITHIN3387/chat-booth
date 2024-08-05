@@ -1,6 +1,6 @@
-import type { FormFieldsType, ValuesType } from "@/components/forms/auth-form";
+import type { FormFieldsType } from "@/components/ui/form";
 
-export const initValues: ValuesType = {
+export const initValues = {
   name: "",
   email: "",
   password: "",

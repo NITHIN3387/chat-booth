@@ -1,15 +1,15 @@
-import { AuthForm } from "@/components/forms/auth-form";
 import Link from "next/link";
 import { formFields, initValues } from "./sign-in.string";
 import { handleSignIn } from "@/utils/auth/web";
+import { Form } from "@/components/ui/form";
 
 export default function Page(): JSX.Element {
   return (
     <div className="h-dvh w-full flex items-center justify-center">
       <section className="space-y-6">
         <h1>SIGN IN</h1>
-        <AuthForm
-          authHandler={handleSignIn}
+        <Form
+          handler={handleSignIn}
           formFields={formFields}
           initValues={initValues}
           submitButtonLabel="Sign In"

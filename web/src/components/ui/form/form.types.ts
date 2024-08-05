@@ -1,20 +1,13 @@
 import type { HTMLInputTypeAttribute } from "react";
 
-export interface ValuesType {
-  name?: string;
-  email: string;
-  password: string;
-  confirm?: string;
-}
-
 export interface FormFieldsType {
-  id: "name" | "email" | "password" | "confirm";
+  id: string;
   label: string;
   placeholder: string;
   type: HTMLInputTypeAttribute;
 }
 
-type AuthHandlerType = (
+type HandlerType = (
   state: any,
   formData: FormData
 ) => Promise<
@@ -26,9 +19,9 @@ type AuthHandlerType = (
   | undefined
 >;
 
-export interface AuthFormProps {
-  authHandler: AuthHandlerType;
+export interface FormProps {
+  handler: HandlerType;
   formFields: FormFieldsType[];
-  initValues: ValuesType;
+  initValues: any;
   submitButtonLabel: string;
 }

@@ -5,13 +5,13 @@ import { Input } from "@/components/ui/input";
 import { handleFormDataChange } from "@/utils/auth/web";
 import { useActionState, useState } from "react";
 import { Loader } from "@/components/loader";
-import type { AuthFormProps, ValuesType } from "./auth-form.types";
+import type { FormProps } from "./form.types";
 
-export const AuthForm = (props: AuthFormProps): JSX.Element => {
-  const { authHandler, formFields, initValues, submitButtonLabel } = props
+export const Form = (props: FormProps): JSX.Element => {
+  const { handler, formFields, initValues, submitButtonLabel } = props
 
-  const [values, setValues] = useState<ValuesType>(initValues);
-  const [state, formAction, isPending] = useActionState(authHandler, null);
+  const [values, setValues] = useState(initValues);
+  const [state, formAction, isPending] = useActionState(handler, null);
 
   return (
     <form action={formAction} className="space-y-6">
@@ -23,7 +23,7 @@ export const AuthForm = (props: AuthFormProps): JSX.Element => {
             name={id}
             placeholder={placeholder}
             type={type}
-            defaultValue={values[id]}
+            defaultValue={(values as any)[id]}
             onChange={(event) => handleFormDataChange(event, state, setValues)}
           />
           {state?.name === id && state.error ? (
