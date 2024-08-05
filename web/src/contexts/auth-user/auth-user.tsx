@@ -2,13 +2,15 @@
 
 import { createContext, type ReactNode, useContext, useEffect, useState } from "react";
 import type { AuthUserContextType, AuthUserType } from "./auth-user.types";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const AuthUserContext = createContext<AuthUserContextType | null>(null);
 
 export const useAuthUser = () => useContext(AuthUserContext)
 
 export const AuthUserProvider = ({ children }: { children: ReactNode }) => {
+  const router = useRouter()
+
   const [authUser, setAuthUser] = useState<AuthUserType | null>(null);
 
   const getAuthUser = async () => {
@@ -19,7 +21,7 @@ export const AuthUserProvider = ({ children }: { children: ReactNode }) => {
 
     const res = await responce.json()
 
-    if(responce.status === 401) redirect("/sign-in")
+    if(responce.status === 401) router.push("/sign-in")
     else if (responce.status === 200) setAuthUser(res.user)
     else console.log("Internal server error");    
   }

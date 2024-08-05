@@ -8,7 +8,7 @@ const user = prisma.user;
 
 export const GET = async () => {
   const cookiesStore = cookies();
-  const token = cookiesStore.get("authToken");
+  const token = cookiesStore.get("token");
 
   if (!token)
     return NextResponse.json({ message: "unauthorized user" }, { status: 401 });
