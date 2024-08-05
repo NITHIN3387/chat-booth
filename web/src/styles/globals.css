@@ -22,8 +22,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--primary-theme-color));
-  border-radius: 3px;
+  @apply bg-primary-theme-color/50 rounded-sm;
 }
 
 * {

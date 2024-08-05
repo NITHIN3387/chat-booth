@@ -6,8 +6,8 @@ export function SideNavBarHeader(): JSX.Element {
   return (
     <header className="sticky top-0 space-y-4 p-4 bg-secondary-bg-color">
       <section className="flex justify-between">
-        <h1>CHAT APP</h1>
-        <DP className="!w-11" name="Nithin N"/>
+        <h1>CHAT BOOTH</h1>
+        <DP className="!w-11" name="Nithin N" />
       </section>
       <section>
         <Input
@@ -17,10 +17,12 @@ export function SideNavBarHeader(): JSX.Element {
         />
       </section>
       <section className="space-x-2">
-        <Button>
-          <b>+</b> Create
+        <Button size="sm" variant="outlined">
+          Create
         </Button>
-        <Button>Join</Button>
+        <Button size="sm" variant="outlined">
+          Join
+        </Button>
       </section>
     </header>
   );

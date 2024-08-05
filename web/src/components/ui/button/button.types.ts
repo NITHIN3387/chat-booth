@@ -6,5 +6,4 @@ export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonConfig> {
   children: ReactNode;
-  variant?: "outlined" | "ghost"
 }
