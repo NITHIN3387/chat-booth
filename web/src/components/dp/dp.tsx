@@ -11,7 +11,7 @@ export function DP(props: DpProps): JSX.Element {
         className,
       ])}
     >
-      {name[0].toUpperCase()}
+      {name ? name[0].toUpperCase() : "•"}
     </div>
   );
 }
