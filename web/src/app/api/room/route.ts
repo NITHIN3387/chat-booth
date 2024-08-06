@@ -4,6 +4,17 @@ import { NextRequest, NextResponse } from "next/server";
 const room = prisma.room;
 const roomMember = prisma.roomMember;
 
+export const GET = async (req: NextRequest) => {
+  const user = JSON.parse(req.headers.get("user")!);
+
+  return await roomMember
+    .findMany({ where: { userId: user.id }, select: { room: true } })
+    .then((res) => NextResponse.json({ roomList: res }, { status: 200 }))
+    .catch(() =>
+      NextResponse.json({ message: "Internal server error" }, { status: 500 })
+    );
+};
+
 export const POST = async (req: NextRequest) => {
   const user = JSON.parse(req.headers.get("user")!);
   const { roomName } = await req.json();
