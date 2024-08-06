@@ -1,4 +1,4 @@
-import type { FormFieldsType } from "@/components/forms/form";
+import { FormFieldsType } from "@/components/ui/form";
 
 export const initValues = {
   roomName: "",
