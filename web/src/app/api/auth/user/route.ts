@@ -10,7 +10,7 @@ export const GET = async (req: NextRequest) => {
   const cookiesStore = cookies();
   const token =
     cookiesStore.get("token")?.value ||
-    req.headers.get("Authorization")?.split(" ")[1];
+    req.headers.get("Authorization")?.split(" ")[1];  
 
   if (!token)
     return NextResponse.json({ message: "unauthorized user" }, { status: 401 });

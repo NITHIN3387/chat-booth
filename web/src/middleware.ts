@@ -5,7 +5,9 @@ export async function middleware(req: NextRequest) {
   const URL = `${req.nextUrl.origin}/api/auth/user`;
 
   const cookieStore = cookies();
-  const token = cookieStore.get("token")?.value;
+  const token =
+    cookieStore.get("token")?.value ||
+    req.headers.get("Authorization")?.split(" ")[1];
 
   const responce = await fetch(URL, {
     method: "GET",
