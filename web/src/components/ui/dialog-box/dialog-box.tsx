@@ -12,7 +12,7 @@ export function DialogBox({
         (e.target as any).id === "dialogBox" ? setShowDialog(false) : null
       }
     >
-      <article className="bg-primary-bg-color p-6 rounded-md border border-ternary-bg-color shadow-md space-y-6">
+      <article className="bg-primary-bg-color p-6 rounded-md border border-ternary-bg-color shadow-md space-y-6 md:w-fit w-80">
         {children}
       </article>
     </div>
