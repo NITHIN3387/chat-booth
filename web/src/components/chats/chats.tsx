@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Message } from "../cards/message";
 import { ChatsProps, MesssageType } from "./chats.types";
 import { getMessages } from "@/utils/message";
@@ -15,11 +15,13 @@ export function Chats({ roomId }: ChatsProps): JSX.Element {
   return (
     <section className="p-4 space-y-4">
       {messages.map((message) => (
-        <Message
-          sender={message.sendBy}
-          message={message.message}
-          sendAt={message.sendAt}
-        />
+        <Fragment key={message.id}>
+          <Message
+            sender={message.sendBy}
+            message={message.message}
+            sendAt={message.sendAt}
+          />
+        </Fragment>
       ))}
     </section>
   );
