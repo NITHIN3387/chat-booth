@@ -13,7 +13,7 @@ export default async function Page({
     <div className="grid grid-rows-[auto_1fr_auto] h-dvh">
       <ChatHeader roomName={room.name} />
       <div></div>
-      <MessageForm />
+      <MessageForm roomId={params.roomId} />
     </div>
   );
 }
