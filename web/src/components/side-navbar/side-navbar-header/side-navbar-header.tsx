@@ -2,6 +2,7 @@
 
 import { DP } from "@/components/dp";
 import { CreateRoomForm } from "@/components/forms/create-room-form";
+import { JoinRoomForm } from "@/components/forms/join-room-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuthUser } from "@/contexts/auth-user";
@@ -12,6 +13,7 @@ export function SideNavBarHeader(): JSX.Element {
   const user = authContext?.authUser;
 
   const [showCreateRoomForm, setShowCreateRoomForm] = useState<boolean>(false);
+  const [showJoinRoomForm, setShowJoinRoomForm] = useState<boolean>(false);
 
   return (
     <header className="sticky top-0 space-y-4 p-4 bg-secondary-bg-color">
@@ -34,13 +36,16 @@ export function SideNavBarHeader(): JSX.Element {
         >
           Create
         </Button>
-        <Button size="sm" variant="outlined">
+        <Button onClick={() => setShowJoinRoomForm(true)} size="sm" variant="outlined">
           Join
         </Button>
       </section>
 
       {showCreateRoomForm ? (
         <CreateRoomForm setShowDialog={setShowCreateRoomForm} />
+      ) : null}
+      {showJoinRoomForm ? (
+        <JoinRoomForm setShowDialog={setShowJoinRoomForm} />
       ) : null}
     </header>
   );
