@@ -1,5 +1,6 @@
 "use client";
 
+import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useActionState, useRef } from "react";
@@ -36,12 +37,13 @@ export function MessageForm({ roomId }: { roomId: string }): JSX.Element {
   return (
     <form action={formAction} className="bg-ternary-bg-color flex gap-4 p-4">
       <Input
+        autoComplete="off"
         className="w-full rounded-md"
         name="message"
         onFocus={handleFocus}
         ref={inputRef}
       />
-      <Button disabled={isPending}>Send</Button>
+      <Button disabled={isPending}>{isPending ? <Loader /> : "Send"}</Button>
     </form>
   );
 }

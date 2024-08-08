@@ -1,3 +1,4 @@
+import { Chats } from "@/components/chats";
 import { MessageForm } from "@/components/forms/message-form";
 import { ChatHeader } from "@/components/headers/chat-header/chat-header";
 import { getRoomDetail } from "@/utils/rooms";
@@ -12,7 +13,7 @@ export default async function Page({
   return (
     <div className="grid grid-rows-[auto_1fr_auto] h-dvh">
       <ChatHeader roomName={room.name} />
-      <div></div>
+      <Chats roomId={params.roomId}/>
       <MessageForm roomId={params.roomId} />
     </div>
   );

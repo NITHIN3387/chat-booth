@@ -29,7 +29,7 @@ model Room {
 model Message {
   id       String   @id @default(uuid())
   message  String
-  sendAt   DateTime @default(now())
+  sendAt   DateTime @default(now()) @db.Timestamptz(6)
   roomId   String
   sendById String
   room     Room     @relation(fields: [roomId], references: [id])
